@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Solar Community Web3 Dashboard Design System
+All colors MUST be HSL - Eco-friendly solar energy theme
+*/
+
+@layer base {
+  :root {
+    /* Base colors - Light grey background */
+    --background: 0 0% 96%;
+    --foreground: 0 0% 20%;
+
+    /* Card system - Clean grey cards */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+
+    /* Primary - Dark grey with pink accent */
+    --primary: 0 0% 20%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 340 98% 54%;
+
+    /* Secondary - Light grey tones */
+    --secondary: 0 0% 28%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted - Light grey variations */
+    --muted: 0 0% 28%;
+    --muted-foreground: 0 0% 100%;
+
+    /* Accent - Pink for highlights (minimal use) */
+    --accent: 340 98% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive - Pink for errors */
+    --destructive: 340 98% 54%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs - Light grey */
+    --border: 0 0% 28%;
+    --input: 0 0% 28%;
+    --ring: 340 98% 54%;
+
+    --radius: 0.75rem;
+
+    /* Gradients - Grey with minimal pink accents */
+    --gradient-solar: linear-gradient(135deg, hsl(0, 0%, 20%) 0%, hsl(0, 0%, 28%) 100%);
+    --gradient-sky: linear-gradient(135deg, hsl(0, 0%, 28%) 0%, hsl(0, 0%, 96%) 100%);
+    --gradient-energy: linear-gradient(90deg, hsl(0, 0%, 20%) 0%, hsl(0, 0%, 28%) 50%, hsl(340, 98%, 54%) 100%);
+    
+    /* Shadows - Subtle grey shadows */
+    --shadow-solar: 0 4px 20px -4px hsl(0 0% 20% / 0.2);
+    --shadow-glow: 0 0 30px hsl(340 98% 54% / 0.15);
+    --shadow-card: 0 2px 10px -2px hsl(0 0% 20% / 0.08);
+    
+    /* Transitions - Smooth energy flow */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 20%;
+    --foreground: 0 0% 96%;
+
+    --card: 0 0% 20%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 0 0% 20%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 0 0% 96%;
+    --primary-foreground: 0 0% 20%;
+
+    --secondary: 0 0% 28%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 0 0% 28%;
+    --muted-foreground: 0 0% 96%;
+
+    --accent: 340 98% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 340 98% 54%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 28%;
+    --input: 0 0% 28%;
+    --ring: 340 98% 54%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-medium;
+  }
+}
+
+/* Solar Dashboard Components */
+@layer components {
+  .solar-gradient {
+    background: var(--gradient-solar);
+  }
+  
+  .energy-gradient {
+    background: var(--gradient-energy);
+  }
+  
+  .sky-gradient {
+    background: var(--gradient-sky);
+  }
+  
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .solar-shadow {
+    box-shadow: var(--shadow-solar);
+  }
+  
+  .smooth-transition {
+    transition: var(--transition-smooth);
+  }
+  
+  .bounce-transition {
+    transition: var(--transition-bounce);
+  }
+  
+  .metric-card {
+    @apply bg-card rounded-xl p-6 card-shadow smooth-transition hover:solar-shadow;
+  }
+  
+  .energy-button {
+    @apply solar-gradient text-primary-foreground px-6 py-3 rounded-lg font-semibold smooth-transition hover:scale-105 hover:glow-effect;
+  }
+  
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl;
+  }
+}
